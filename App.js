@@ -1,10 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import CalculatePage from './Pages/CalculatePage/CalculatePage';
+import Home from './Pages/Home/Home';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hello World!</Text>
+
+      <Home />
+
       <StatusBar style="auto" />
     </View>
   );
