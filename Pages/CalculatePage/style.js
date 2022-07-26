@@ -2,6 +2,10 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     container: {
+        height: '100%',
+        width: '100%'
+    },
+    calculatorContainer: {
         paddingHorizontal: 20,
         paddingTop: 40,
         backgroundColor: '#3399cc',
@@ -49,6 +53,29 @@ const styles = StyleSheet.create({
         fontWeight: '700',
         marginTop: 20,
         textAlign: 'center'
+    },
+    resultContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        width: '100%'
+    },
+    textContainer: {
+        padding: 20,
+        width: '55%'
+    },
+    resultText: {
+        fontSize: 25,
+        marginLeft: 10,
+        fontWeight: '600',
+        color: '#3399cc',
+        marginBottom: 20
+    },
+    imageContainer: {
+        marginRight: 20,
+        marginBottom: 20,
+        width: '45%',
     }
 });
 
