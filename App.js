@@ -19,7 +19,6 @@ const { width, height } = Dimensions.get('screen');
 export default function App() {
   return (
     <View>
-
       <FlatList
         data={Data}
         keyExtractor={item => item.Key}
@@ -35,7 +34,6 @@ export default function App() {
           </View>
         }}
       />
-
       <StatusBar style="auto" />
     </View>
   );

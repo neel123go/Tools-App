@@ -5,7 +5,7 @@ import styles from './style';
 const AddProductPage = () => {
     return (
         <View style={styles.container}>
-            <Text>Hello</Text>
+            <Text>Add Product Page</Text>
         </View>
     );
 };
