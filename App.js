@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { Animated, Dimensions, FlatList, View } from 'react-native';
-import CalculatePage from './Pages/CalculatePage/CalculatePage';
+import { Dimensions, FlatList, View } from 'react-native';
+import AddProductPage from './Pages/AddProductPage/AddProductPage';
 import Home from './Pages/Home/Home';
 
 const Components = {
   componentOne: <Home />,
-  componentTwo: <CalculatePage />
+  componentTwo: <AddProductPage />
 };
 
 const Data = Object.keys(Components).map((i) => ({
@@ -30,7 +30,6 @@ export default function App() {
         renderItem={({ item }) => {
           return <View
             style={{ width, height }}
-
           >
             {item.component}
           </View>
