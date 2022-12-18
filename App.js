@@ -1,40 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { Dimensions, FlatList, View } from 'react-native';
-import AddProductPage from './Pages/AddProductPage/AddProductPage';
-import Home from './Pages/Home/Home';
-
-const Components = {
-  componentOne: <Home />,
-  componentTwo: <AddProductPage />
-};
-
-const Data = Object.keys(Components).map((i) => ({
-  Key: i,
-  title: i,
-  component: Components[i]
-}));
-
-const { width, height } = Dimensions.get('screen');
+import Home from './src/Pages/Home/Home';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AddProductPage from './src/Pages/AddProductPage/AddProductPage';
+import Products from './src/Pages/Products/Products';
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
+
   return (
-    <View>
-      <FlatList
-        data={Data}
-        keyExtractor={item => item.Key}
-        showsVerticalScrollIndicator={false}
-        snapToAlignment={'start'}
-        decelerationRate={'normal'}
-        snapToInterval={height}
-        renderItem={({ item }) => {
-          return <View
-            style={{ width, height }}
-          >
-            {item.component}
-          </View>
-        }}
-      />
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} options={{
+          headerTitle: 'Tools',
+          headerStyle: {
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontSize: 35,
+            marginLeft: 20,
+            color: '#fff',
+            fontWeight: 'bold',
+          },
+        }} />
+
+        <Stack.Screen name="AddProduct" component={AddProductPage} options={{
+          headerTitle: 'Add Product'
+        }} />
+
+        <Stack.Screen name="Products" component={Products} options={{
+          headerTitle: 'Products'
+        }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
