@@ -6,7 +6,7 @@ const Products = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        const url = `http://10.0.2.2:5000/tools`
+        const url = `https://native-app.onrender.com/tools`
         fetch(url, {
             method: 'GET',
             headers: {

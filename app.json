@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "BMI-Calculator",
-    "slug": "BMI-Calculator",
+    "name": "Tools Shop Service",
+    "slug": "toolsshopservicer",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.ayoun_paul_neel.toolsshopservicer"
     },
     "web": {
       "favicon": "./assets/favicon.png"

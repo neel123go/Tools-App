@@ -4,7 +4,7 @@ import styles from './style';
 import * as ImagePicker from 'expo-image-picker';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-const AddProductPage = () => {
+const AddProductPage = ({ navigation }) => {
     const [productImage, setProductImage] = useState('');
     const [productName, setProductName] = useState('');
     const [category, setCategory] = useState('');
@@ -35,7 +35,7 @@ const AddProductPage = () => {
             category
         };
 
-        fetch('http://10.0.2.2:5000/addItem', {
+        fetch('https://native-app.onrender.com/addItem', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -44,7 +44,9 @@ const AddProductPage = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                if (data.acknowledged) {
+                    navigation.navigate("Products")
+                }
             })
     }
 
